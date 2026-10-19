@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Personal Finance & Expense Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="tracker-header">
+    <div class="tracker-header__brand">
+      <span class="tracker-header__logo">💰</span>
+      <h1 class="tracker-header__title">Personal Finance &amp; Expense Tracker</h1>
+    </div>
+    <p class="tracker-header__greeting">Wanda Nurfadillaq (wanda_nurfadillaq678)</p>
+  </header>
+
+  <main class="tracker-main">
+
+    <!-- Dashboard Ringkasan Keuangan -->
+    <section class="dashboard" id="dashboard">
+      <div class="dashboard__card dashboard__card--balance">
+        <span class="dashboard__label">Total Saldo</span>
+        <span class="dashboard__value" id="totalBalance">Rp0</span>
+      </div>
+      <div class="dashboard__card dashboard__card--income">
+        <span class="dashboard__label">Total Pemasukan</span>
+        <span class="dashboard__value" id="totalIncome">Rp0</span>
+      </div>
+      <div class="dashboard__card dashboard__card--expense">
+        <span class="dashboard__label">Total Pengeluaran</span>
+        <span class="dashboard__value" id="totalExpense">Rp0</span>
+      </div>
+    </section>
+
+    <!-- Form Tambah / Edit Transaksi -->
+    <section class="form-section">
+      <h2 id="formTitle">Tambah Transaksi</h2>
+      <form id="transactionForm">
+        <div class="form-group">
+          <label for="title">Judul Transaksi</label>
+          <input type="text" id="title" name="title" placeholder="Contoh: Gaji Bulanan" />
+        </div>
+
+        <div class="form-group">
+          <label for="amount">Nominal (Rp)</label>
+          <input type="number" id="amount" name="amount" placeholder="Contoh: 50000" min="0" />
+        </div>
+
+        <div class="form-group">
+          <label for="date">Tanggal</label>
+          <input type="date" id="date" name="date" />
+        </div>
+
+        <div class="form-group">
+          <label for="type">Tipe Transaksi</label>
+          <select id="type" name="type">
+            <option value="income">Pemasukan</option>
+            <option value="expense">Pengeluaran</option>
+          </select>
+        </div>
+
+        <div class="form-group form-group--actions">
+          <button type="submit" id="submitBtn">Simpan</button>
+          <button type="button" id="cancelEditBtn" class="btn-secondary" hidden>Batal</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Pencarian -->
+    <section class="search-section">
+      <input type="text" id="searchInput" placeholder="🔍 Cari transaksi berdasarkan judul..." />
+    </section>
+
+    <!-- Daftar Transaksi -->
+    <section class="transactions">
+      <div class="transactions__column">
+        <h2 class="transactions__heading transactions__heading--income">Pemasukan</h2>
+        <div id="incomeList" class="transactions__list"></div>
+      </div>
+
+      <div class="transactions__column">
+        <h2 class="transactions__heading transactions__heading--expense">Pengeluaran</h2>
+        <div id="expenseList" class="transactions__list"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="tracker-footer">
+    <p>Dibuat sebagai submission Front-End Web Pemula — Dicoding</p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
